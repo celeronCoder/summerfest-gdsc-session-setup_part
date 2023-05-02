@@ -1,0 +1,91 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "description": "Home page of API (greeting message)",
+      "method": "GET",
+      "body": null,
+      "params": null,
+      "response": {
+        "message": "string"
+      }
+    },
+    {
+      "route": "/todos",
+      "description": "Get all todos",
+      "method": "GET",
+      "body": null,
+      "params": null,
+      "response": []
+    },
+    {
+      "route": "/todos",
+      "description": "Create a todo",
+      "method": "POST",
+      "body": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "completed": {
+          "type": "boolean",
+          "required": false
+        }
+      },
+      "params": null,
+      "response": {
+        "id": "number",
+        "title": "string",
+        "completed": "boolean"
+      }
+    },
+    {
+      "route": "/todos/:id",
+      "description": "Get a todo by ID",
+      "method": "GET",
+      "body": null,
+      "params": { "id": "number" },
+      "response": {
+        "id": "number",
+        "title": "string",
+        "completed": "boolean"
+      }
+    },
+    {
+      "route": "/todos/:id",
+      "description": "Update a todo",
+      "method": "PUT",
+      "body": {
+        "title": {
+          "type": "string",
+          "required": false
+        },
+        "completed": {
+          "type": "boolean",
+          "required": false
+        }
+      },
+      "params": { "id": "number" },
+      "response": {
+        "id": "number",
+        "title": "string",
+        "completed": "boolean"
+      }
+    },
+    {
+      "route": "/todos/:id",
+      "description": "Delete a todo by ID",
+      "method": "DELETE",
+      "body": null,
+      "params": { "id": "number" },
+      "response": {
+        "todo": {
+          "id": "number",
+          "title": "string",
+          "completed": "boolean"
+        },
+        "message": "string"
+      }
+    }
+  ]
+}
