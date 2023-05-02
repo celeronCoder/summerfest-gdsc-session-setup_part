@@ -17,7 +17,8 @@ app.get("/api", (_req, res) => {
 });
 
 async function main() {
-  app.listen(8000, () => console.log("The server started at port 8000"));
+  const PORT = process.env.PORT || 8000;
+  app.listen(PORT, () => console.log(`The server started at port ${PORT}`));
 }
 
 main()
